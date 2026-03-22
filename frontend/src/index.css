@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  :root {
+    /* Color Palette */
+    --background: 210 20% 98%;
+    --foreground: 215 25% 27%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 25% 27%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 25% 27%;
+
+    /* Orange - Primary Brand */
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 25 95% 48%;
+
+    /* Blue - Secondary */
+    --secondary: 210 100% 40%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Success Green for Active Internships */
+    --success: 120 60% 50%;
+    --success-foreground: 0 0% 100%;
+    --success-light: 120 60% 95%;
+
+    /* Warning Red for Closed Internships */
+    --warning: 0 85% 60%;
+    --warning-foreground: 0 0% 100%;
+    --warning-light: 0 85% 95%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 215 25% 27%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 25 95% 53%;
+
+    --radius: 0.375rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 6.5%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 6.5%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Keep brand orange in dark for contrast */
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Brighter secondary blue for dark backgrounds */
+    --secondary: 210 100% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20% 78%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 40.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Slightly lighter borders/inputs for visibility */
+    --border: 217.2 22% 25%;
+    --input: 217.2 22% 25%;
+    --ring: 25 95% 53%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 25 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 25 95% 53%;
+  }
+}
+
+@layer base {
+  * {
+    /* Only set the default border color token; do not draw borders */
+    @apply border-border;
+  }
+
+  body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Noto Sans, Ubuntu, Cantarell, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      @apply bg-background text-foreground antialiased;
+  }
+}
+
+  /* Smooth page fade-in */
+  .page-fade {
+    animation: page-fade-in 300ms ease-out;
+  }
+
+  @keyframes page-fade-in {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
